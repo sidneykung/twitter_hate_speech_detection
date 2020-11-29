@@ -2,6 +2,11 @@
 
 ## Repository Contents
 
+Notebooks Order
+1. data_cleaning.ipynb
+2. nlp_preprocessing.ipynb
+3. eda_notebook.ipynb
+
 
 ## Overview
 
