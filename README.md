@@ -35,5 +35,6 @@ Notebooks Order
 
 ## For More Information
 
-See the [full model process](link) in the`final_notebook_name` Jupyter Notebook.
+See the [full model process](link) in the `final_notebook_name.ipynb` Jupyter Notebook.
+
 For additional info, contact Sidney Kung at sidneyjkung@gmail.com
