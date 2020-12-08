@@ -35,6 +35,5 @@ Notebooks Order
 
 ## For More Information
 
-See the [full model process](link) in a Jupyter Notebook, `final_notebook_name`, located in this repository.
-
+See the [full model process](link) in the`final_notebook_name` Jupyter Notebook.
 For additional info, contact Sidney Kung at sidneyjkung@gmail.com
