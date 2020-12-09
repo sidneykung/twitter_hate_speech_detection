@@ -1,4 +1,5 @@
 # Twitter Hate Speech Detection
+#### Project ongoing until January 6
 
 ## Overview
 
