@@ -4,7 +4,7 @@
 ## Overview
 
 
-## Business Understanding
+## Business Problem
 
 Human content moderation exploits people by consistently traumatizing and underpaying them, both domestically and overseas. In 2019, an article on The Verge exposed the extensive list of horrific working conditions that employees faced at Cognizant, which was Facebook’s primary moderation contractor. Unfortunately, every major tech company, including Twitter, uses human moderators to some extent. 
 
