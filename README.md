@@ -61,16 +61,16 @@ Questions to consider:
 
 ## Repository Contents
 
->  .
->  ├── models                                     # contains model iterations
->  ├── pickle                                     # contains cleaned data
->  ├── preprocessing                              # contains all visualizations and local images
->  |    ├── twitter_data.csv                      # raw dataset
->  |    ├── data_cleaning.ipynb                   # cleaning raw data to project format
->  ├── visualizations                             # contains visualizations and local images
->  ├── presentation.pdf                           # slide deck
->  ├── README.md                                  # public-facing preview
->  └── final_notebook.ipynb                       # final version of EDA, feature engineering and modeing process
+.
+├── models                                     # contains model iterations
+├── pickle                                     # contains cleaned data
+├── preprocessing                              # contains all visualizations and local images
+|   ├── twitter_data.csv                       # raw dataset
+│   └── data_cleaning.ipynb                    # cleaning raw data to project format
+├── visualizations                             # contains visualizations and local images
+├── presentation.pdf                           # slide deck
+├── README.md                                  # public-facing preview
+└── final_notebook.ipynb                       # final version of EDA, feature engineering and modeing process
 
 ## For More Information
 
