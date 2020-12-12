@@ -3,6 +3,8 @@
 
 ## Overview
 
+***One-paragraph description of the project, including the business problem, data, meethods, results, and reccomendations.***
+
 
 ## Business Problem
 
@@ -11,6 +13,13 @@ Human content moderation exploits people by consistently traumatizing and underp
 This project aims to automate content moderation to identify hate speech using machine learning binary classification algorithms. Hate speech is defined abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation. Usually, the difference between hate speech and offensive language comes down to subtle context or diction. Any company with a website where users post content will benefit from automating as much as the moderation process as possible.
 
 **Please note:** Because of the subject matter of this project, all notebooks contain offensive language from the dataset.
+
+***Summary of the business problem you are trying to solve, and the data questions that you plan to answer in order to solve them.***
+
+Questions to consider:
+- What are the business's pain points related to this project?
+- How did you pick the data analysis question(s) that you did?
+- Why are these questions important from a business perspective?
 
 ## Data & Methods
 
@@ -27,25 +36,48 @@ Therefore, the final model will be predicting whether a tweet is hate speech or 
 - `label`: class label for majority of CF user votes. 1 - hate speech 0 - not hate speech
 - `tweet`: raw tweets
 
+***Methods: Describe the process for analyzing or modeling the data.***
+
+Questions to consider:
+- How did you prepare, analyze or model the data?
+- Why is this approach appropriate given the data and the business problem?
+
 ## Results
 
+***Present key results***
+
+Questions to consider:
+- How do you interpret the results?
+- How confident are you that your results would generalize beyond the data you have?
 
 ## Conclusion
 
+***Provide conclusions about the work done, including any limitations or next steps.***
+
+Questions to consider:
+- What would you recommend the business do as a result of this work?
+- What are some reasons why your analysis might not fully solve the business problem?
+- What else could you do in the future to improve this project?
 
 ## Repository Contents
 
-- `models`: folder with model iterations
-- `pickle`: folder with pickled dataframes and models
-- `preprocessing`: folder with original data, data cleaning notebook and EDA notebook
-- `visuazations` : folder with graphs & images
+.
+├── models                                     # contains model iterations
+├── pickle                                     # contains cleaned data
+├── preprocessing                              # contains all visualizations and local images
+|    ├── twitter_data.csv                      # raw dataset
+|    ├── data_cleaning.ipynb                   # cleaning raw data to project format
+├── visualizations                             # contains visualizations and local images
+├── presentation.pdf                           # slide deck
+├── README.md                                  # public-facing preview
+└── final_notebook.ipynb                       # final version of EDA, feature engineering and modeing process
 
 ## For More Information
 
-See the [full model process](link) in the `final_notebook_name.ipynb` Jupyter Notebook.
+See the [full project overview](link) in the `final_notebook.ipynb` Jupyter Notebook.
 
 For additional info, contact Sidney Kung at sidneyjkung@gmail.com
 
-## References:
+## References
 
 Davidson, T., Warmsley, D., Macy, M. and Weber, I., 2017. Automated Hate Speech Detection and the Problem of Offensive Language. ArXiv,.
