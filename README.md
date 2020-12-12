@@ -2,12 +2,10 @@
 #### Project ongoing until January 6
 
 ## Overview
-
 ***One-paragraph description of the project, including the business problem, data, meethods, results, and reccomendations.***
 
 
 ## Business Problem
-
 Human content moderation exploits people by consistently traumatizing and underpaying them, both domestically and overseas. In 2019, an article on The Verge exposed the extensive list of horrific working conditions that employees faced at Cognizant, which was Facebook’s primary moderation contractor. Unfortunately, every major tech company, including Twitter, uses human moderators to some extent. 
 
 This project aims to automate content moderation to identify hate speech using machine learning binary classification algorithms. Hate speech is defined abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation. Usually, the difference between hate speech and offensive language comes down to subtle context or diction. Any company with a website where users post content will benefit from automating as much as the moderation process as possible.
@@ -22,7 +20,6 @@ Questions to consider:
 - Why are these questions important from a business perspective?
 
 ## Data & Methods
-
 The dataset for this capstone project comes from a study called Automated Hate Speech Detection and the Problem of Offensive Language  conducted by Thomas Davidson and a team at Cornell University in 2017. The GitHub repository can be found [here](). The dataset is provided as a `.csv` file with 24,802 text posts from Twitter where 6% of the tweets were labeled as hate speech. 
 
 Since content moderation is so subjective, the labels on this dataset were crowdsourced and determined by majority-rules. The “class” column labels each tweet as 0 for hate speech, 1 for offensive language or 2 for neither. In order to create a different project and adapt the data to my specific business context, I will be treating the data as a binary classification problem. 
@@ -43,7 +40,6 @@ Questions to consider:
 - Why is this approach appropriate given the data and the business problem?
 
 ## Results
-
 ***Present key results***
 
 Questions to consider:
@@ -51,7 +47,6 @@ Questions to consider:
 - How confident are you that your results would generalize beyond the data you have?
 
 ## Conclusion
-
 ***Provide conclusions about the work done, including any limitations or next steps.***
 
 Questions to consider:
@@ -60,17 +55,18 @@ Questions to consider:
 - What else could you do in the future to improve this project?
 
 ## Repository Contents
-
+```bash
 .
-├── models                                     # contains model iterations
-├── pickle                                     # contains cleaned data
-├── preprocessing                              # contains all visualizations and local images
-|   ├── twitter_data.csv                       # raw dataset
-│   └── data_cleaning.ipynb                    # cleaning raw data to project format
-├── visualizations                             # contains visualizations and local images
-├── presentation.pdf                           # slide deck
-├── README.md                                  # public-facing preview
-└── final_notebook.ipynb                       # final version of EDA, feature engineering and modeing process
+├── models                                    # contains model iterations
+├── pickle                                    # contains cleaned data
+├── preprocessing                             # contains all visualizations and local images
+│   ├── twitter_data.csv                      # raw dataset
+│   └── data_cleaning.ipynb                   # cleaning raw data to project format
+├── visualizations                            # contains visualizations and local images
+├── presentation.pdf                          # slide deck
+├── README.md                                 # public-facing preview
+└── final_notebook.ipynb                      # final version of EDA, feature engineering and modeing process
+```
 
 ## For More Information
 
