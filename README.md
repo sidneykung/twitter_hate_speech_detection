@@ -59,7 +59,7 @@ Questions to consider:
 .
 ├── models                             # contains model iterations
 ├── pickle                             # contains cleaned data
-├── preprocessing                      # contains all visualizations and local images
+├── preprocessing                      # contains all data preperation iterations and EDA notebooks
 │   ├── twitter_data.csv               # raw dataset
 │   └── data_cleaning.ipynb            # cleaning raw data to project format
 ├── visualizations                     # contains visualizations and local images
