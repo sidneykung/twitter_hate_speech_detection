@@ -2,7 +2,7 @@
 #### Project ongoing until January 6
 
 ## Overview
-***One-paragraph description of the project, including the business problem, data, meethods, results, and reccomendations.***
+***One-paragraph description of the project, including the business problem, data, methods, results, and reccomendations.***
 
 
 ## Business Problem
