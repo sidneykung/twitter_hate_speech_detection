@@ -8,7 +8,7 @@
 ## Business Problem
 Human content moderation exploits people by consistently traumatizing and underpaying them, both domestically and overseas. In 2019, an article on The Verge exposed the extensive list of horrific working conditions that employees faced at Cognizant, which was Facebook’s primary moderation contractor. Unfortunately, every major tech company, including Twitter, uses human moderators to some extent. 
 
-This project aims to automate content moderation to identify hate speech using machine learning binary classification algorithms. Hate speech is defined abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation. Usually, the difference between hate speech and offensive language comes down to subtle context or diction. Any company with a website where users post content will benefit from automating as much as the moderation process as possible.
+This project aims to automate content moderation to identify hate speech using machine learning binary classification algorithms. Hate speech is defined as abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation. Usually, the difference between hate speech and offensive language comes down to subtle context or diction. Any company with a website where users post content will benefit from automating as much as the moderation process as possible.
 
 **Please note:** Because of the subject matter of this project, all notebooks contain offensive language from the dataset.
 
