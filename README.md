@@ -1,4 +1,5 @@
 # Twitter Hate Speech Detection
+## *Can content moderation be automated?*
 #### Project ongoing until January 6
 
 ## Overview
@@ -39,12 +40,22 @@ Questions to consider:
 - How did you prepare, analyze or model the data?
 - Why is this approach appropriate given the data and the business problem?
 
+## Data Understanding
+
+1. What is the overall polarity of the tweets?
+2. What are the most popular hashtags of each tweet type?
+3. Which phrases have the most importance in modeling?
+
 ## Results
 ***Present key results***
 
 Questions to consider:
 - How do you interpret the results?
 - How confident are you that your results would generalize beyond the data you have?
+
+## Recommendations
+
+## Final Modeel Performance
 
 ## Conclusion
 ***Provide conclusions about the work done, including any limitations or next steps.***
@@ -53,6 +64,11 @@ Questions to consider:
 - What would you recommend the business do as a result of this work?
 - What are some reasons why your analysis might not fully solve the business problem?
 - What else could you do in the future to improve this project?
+
+## Next Steps
+- Evaluate model with new tweet or other online forum data
+- LDA Topic Modeling with Gensim
+- Deploy MVP on Webapp via StreamLit
 
 ## Repository Contents
 ```bash
