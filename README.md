@@ -33,41 +33,41 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 | tweet | raw tweets |
 | clean_tweet | tweets filtered through NLP data cleaning process |
 
-## Data Analysis Questions
+## Data Understanding
 
-1. What are the linguistic differences between hate speech and offensive language?
-2. What is the overall polarity of the tweets?
-3. What are the most popular hashtags of each tweet type?
-
-## Results
+### 1. What are the linguistic differences between hate speech and offensive language?
 
 ![img1](./visualizations/label_word_count_y.png)
 
-Linguistically, it's important to note that the difference between hate speech and offensive language often comes down to how it **targets marginalized communities, often in threatening ways.**
- 
-For instance, we can notice from this figure that Hate Speech typically contains the N-word with the hard 'R'. The use of this slur indicates far more malicious intent, which goes beyond possibly using the word as slang.
- 
-Examples like that demonstrate the nuances of English slang and the fine line between Hate Speech and offensive language.
+Linguistically, it's important to note that the difference between hate speech and offensive language often comes down to how it targets marginalized communities, often in threatening ways.
+
+Although these graphs have very similar frequently occurring words, there are a few that stand out. For instance, we can notice from this figure that Hate Speech typically contains the N-word with the hard 'R'. **The use of this slur could indicate malicious intent, which goes beyond possibly using the word as slang.**
+
+Examples like that one demonstrate the nuances of English slang and the fine line between Hate Speech and offensive language. **Because of the similarities of each label’s vocabulary, it could be difficult for machine learning algorithms to differentiate between them and determine what counts as hate speech.**
+
+### 2. What are the most popular hashtags of each tweet type?
+
+![img2](./visualizations/censored_top_hashtags.png)
+
+From these word clouds, we can see some more parallels and differences between what is classified as hate speech or not. For instance, #tcot stands for "Top Conservatives On Twitter” and it appears in both groups. However, #teabagger, which refers to those who identify with the Tea Party, that is primarily (but not exclusively) associated with the Repubclican Party, appears in only the “Not Hate Speech” cloud. Both hashtags are used among Alt-Right communities.
+
+Additionally, the #r**skins hashtag appears in only the Not Hate Speech cloud. This was the former name of the Washington NFL team. Knowing the context, we know that hashtag could certainly include text that constitutes as hate speech. WIth this, and other hashtags that appear in the “Not Hate Speech” cloud, we can clearly see the very slight differences between the two labels.
+
+Besides that, others are simply pop culture references, such as #Scandal the TV show or #vote5sos referring to the boy band. It’s interesting that those contain a lot of offensive language, probably from fan reactions and community conflicts. Ultimately, we can recommend that **Twitter should closely monitor those top hashtags for potential posts containing hate speech** or even regular offensive language.
 
 
-![img2](./visualizations/compound_polarity_score.png)
+### 3. What is the overall polarity of the tweets?
 
-The Compound score is a metric that calculates the sum of all the [lexicon ratings](https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_lexicon.txt) which have been normalized between -1 and +1. With -1 being extreme negative and +1 being extreme positive. **This score encompasses the overall sentiment of this corpus.**
+![img3](./visualizations/compound_polarity_score.png)
+
+The compound polarity score is a metric that calculates the sum of all the [lexicon ratings](https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_lexicon.txt) which have been normalized between -1 and +1. With -1 being extreme negative and +1 being extreme positive. **This score encompasses the overall sentiment of this corpus.**
 
 - Hate Speech tweets on average have a compound score of -0.363
 - Non Hate Speech tweets on average have a compound score of -0.263
 
-According to this metric, both classes of tweets have negative sentiments because their normalized compound scores are less than -0.05.
+According to this metric, both classes of tweets have pretty negative sentiments because their normalized compound scores are less than -0.05. 
 
-From this graph, we can see that tweets classified as Hate Speech are especially negative. Therefore, although both classes contain offensive language, Hate Speech has much more on average.
-
-![img3](./visualizations/censored_hashtags.png)
-
-Only a few of these hashtags provide meaning. For instance, #teabagger and #tcot are hashtags used among Alt-Right communities. #teabagger refers to those who identify with the Tea Party, which is primarily (but not exclusively) associated with the Repubclican Party. And #tcot stands for "Top Conservatives On Twitter."
-
-It could be expected that those hashtags contain hate speech or offensive language. Others are simply pop culture references, such as #Scandal the TV show or #vote5sos referring to the boy band.
-
-We can **recommend that Twitter closely monitors those top hashtags for potential posts containing hate speech** or even regular offensive language.
+Additionally from this graph, we can see that tweets classified as Hate Speech are especially negative. This further emphasizes how slim the difference between the two labels are. Although both classes contain negative and offensive language, Hate Speech is much more negative on average.
 
 ## Final Model Performance
 
