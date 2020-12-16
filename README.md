@@ -22,7 +22,7 @@ Since content moderation is so subjective, the labels on this dataset were crowd
 
 Therefore, the final model will be **predicting whether a tweet is hate speech or not.** To prepare the data for this, I will be manually replacing existing 1 and 2 values as 0, and replacing 0 as 1 to indicate hate speech.
 
-#### Cleaned Dataset Columns
+### Cleaned Dataset Columns
 
 | Column Name | Description |
 |-|-|
@@ -41,6 +41,9 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 
 ## Results
 
+![img1](./visualizations/avg_polarity_by_tweet_type.png)
+
+![img2](./visualizations/censored_hashtags.png)
 
 ## Recommendations
 
