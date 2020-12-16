@@ -43,15 +43,35 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 
 ![img1](./visualizations/label_word_count.png)
 
+Linguistically, it's important to note that the difference between hate speech and offensive language often comes down to how it **targets marginalized communities, often in threatening ways.**
+ 
+For instance, we can notice from this figure that Hate Speech typically contains the N-word with the hard 'R'. The use of this slur indicates far more malicious intent, which goes beyond possibly using the word as slang.
+ 
+Examples like that demonstrate the nuances of English slang and the fine line between Hate Speech and offensive language.
+
+
 ![img2](./visualizations/compound_scores.png)
+
+The Compound score is a metric that calculates the sum of all the [lexicon ratings](https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_lexicon.txt) which have been normalized between -1 and +1. With -1 being extreme negative and +1 being extreme positive. **This score encompasses the overall sentiment of this corpus.**
+
+- Hate Speech tweets on average have a compound score of -0.363
+- Non Hate Speech tweets on average have a compound score of -0.263
+
+According to this metric, both classes of tweets have negative sentiments because their normalized compound scores are less than -0.05.
+
+From this graph, we can see that tweets classified as Hate Speech are especially negative. Therefore, although both classes contain offensive language, Hate Speech has much more on average.
 
 ![img3](./visualizations/censored_hashtags.png)
 
-## Recommendations
+Only a few of these hashtags provide meaning. For instance, #teabagger and #tcot are hashtags used among Alt-Right communities. #teabagger refers to those who identify with the Tea Party, which is primarily (but not exclusively) associated with the Repubclican Party. And #tcot stands for "Top Conservatives On Twitter."
 
+It could be expected that those hashtags contain hate speech or offensive language. Others are simply pop culture references, such as #Scandal the TV show or #vote5sos referring to the boy band.
 
-## Final Modeel Performance
+We can **recommend that Twitter closely monitors those top hashtags for potential posts containing hate speech** or even regular offensive language.
 
+## Final Model Performance
+
+**insert confusion matrix**
 
 ## Conclusion
 
