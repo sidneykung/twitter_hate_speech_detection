@@ -71,6 +71,12 @@ Additionally from this graph, we can see that tweets classified as Hate Speech a
 
 ## Final Model Performance
 
+We use the evaluation metrics Precision, Recall and F1 score to determine success. However, F1 is valued as the “most important” metric because by finding an equal balance between Precision and Recall, it's useful for data with high class imbalance.
+
+Overall, we want as much hate speech to flagged as possible and so that it can be efficiently removed.
+
+**Briefly describe modeling process**
+
 **insert confusion matrix**
 
 ## Conclusion
