@@ -50,7 +50,7 @@ For instance, we can notice from this figure that Hate Speech typically contains
 Examples like that demonstrate the nuances of English slang and the fine line between Hate Speech and offensive language.
 
 
-![img2](./visualizations/compound_scores.png)
+![img2](./visualizations/compound_polarity_score.png)
 
 The Compound score is a metric that calculates the sum of all the [lexicon ratings](https://github.com/cjhutto/vaderSentiment/blob/master/vaderSentiment/vader_lexicon.txt) which have been normalized between -1 and +1. With -1 being extreme negative and +1 being extreme positive. **This score encompasses the overall sentiment of this corpus.**
 
