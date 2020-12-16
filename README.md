@@ -35,15 +35,17 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 
 ## Data Analysis Questions
 
-1. What is the overall polarity of the tweets?
-2. What are the most popular hashtags of each tweet type?
-3. Which phrases have the most importance in modeling?
+1. What are the linguistic differences between hate speech and offensive language?
+2. What is the overall polarity of the tweets?
+3. What are the most popular hashtags of each tweet type?
 
 ## Results
 
-![img1](./visualizations/avg_polarity_by_tweet_type.png)
+![img1](./visualizations/label_word_count.png)
 
-![img2](./visualizations/censored_hashtags.png)
+![img2](./visualizations/compound_scores.png)
+
+![img3](./visualizations/censored_hashtags.png)
 
 ## Recommendations
 
