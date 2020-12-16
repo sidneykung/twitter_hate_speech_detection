@@ -41,6 +41,7 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 
 ## Results
 
+![img1](./visualizations/label_word_count.png)
 
 ![img2](./visualizations/compound_scores.png)
 
