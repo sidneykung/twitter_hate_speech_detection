@@ -41,7 +41,7 @@ Therefore, the final model will be **predicting whether a tweet is hate speech o
 
 ## Results
 
-![img1](./visualizations/label_word_count.png)
+![img1](./visualizations/label_word_count_y.png)
 
 Linguistically, it's important to note that the difference between hate speech and offensive language often comes down to how it **targets marginalized communities, often in threatening ways.**
  
