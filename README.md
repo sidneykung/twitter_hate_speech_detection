@@ -93,8 +93,11 @@ Overall, we want as much hate speech to flagged as possible and so that it can b
 ├── models                             # contains model iterations
 ├── pickle                             # contains cleaned data
 ├── preprocessing                      # contains all data preperation iterations and EDA notebooks
-│   ├── twitter_data.csv               # raw dataset
-│   └── data_cleaning.ipynb            # cleaning raw data to project format
+│   ├── data_cleaning.ipynb            # raw data cleaning notebook
+│   ├── eda_notebook.ipynb             # exploratory data analysis notebook
+│   └── nlp_preprocessing.ipynb        # feature engineering notebook
+├── src                                # source folder
+│   └── twitter_data.csv               # raw dataset
 ├── visualizations                     # contains visualizations and local images
 ├── presentation.pdf                   # slide deck
 ├── README.md                          # public-facing preview
