@@ -71,21 +71,52 @@ Additionally from this graph, we can see that tweets classified as Hate Speech a
 
 ## Final Model Performance
 
-We use the evaluation metrics Precision, Recall and F1 score to determine success. However, F1 is valued as the “most important” metric because by finding an equal balance between Precision and Recall, it's useful for data with high class imbalance.
+For this business problem, we will use F1 score as the main metric, while also looking at Precision and Recall. The F1 score finds the harmonic mean between Precision and Recall, and it's useful for data with high class imbalance.
+
+We will also be looking at the weighted F1 score, as it can account for the class imbalance in labels by calculating metrics for each label. It finds their average weighted by support (the number of true instances for each label). This results in a F1 score that is not between precision and recall.
 
 Overall, we want as much hate speech to flagged as possible and so that it can be efficiently removed.
 
 ![confusion](./visualizations/normalized_svm_matrix.png)
 
 
+So as expected, the final model has a True Negative Rate of 95% and a True Positive Rate of only 44%.
+
+This is consistent with the final model's evaluation metrics, where it got a Recall of .437, aka the True Negative Rate. In this business context, we would ideally want as many True Negatives as possible, because that would be identifying Hate Speech correctly. Therefore, this is where the final model fails.
+
+Also, we can see that only 4.6% of predictions are False Positives. Which mean that they were classified as "Hate Speech" when it's not. It's great that this amount is low, because site users tend to launch complaint reports when their content is over-flagged as hate speech content when it's not.
+
+Overall, the Recall of this model needs to be greatly improved, in addition to the F1 of .0.3955.
+
 ## Conclusion
+
+The final model had an F1 of .3955 and Recall of .437, which isn't much better than random guessing. Although this project had extensive preprocessing and modeling iterations, there is room for improvement.
+
+It's important to understand why the model performed so poorly and how that relates to the business problem. The F1 score was brought down by the "Hate Speech" label predictions. The model was able to predict 95% of the "Not Hate Speech" labels correctly, but it performed poorly for the other label, only able to correctly predict 44%.
+
+This performance is indicative of the two major roadblocks of the project: (1) the class imbalance of the dataset and (2) the model's ability to identify what constitutes as hate speech.
+
+The issue of class imbalance is manageable with preprocessing techniques and oversampling/undersampling techniques. However, identifying hate speech is an overall problem that many major tech companies like Twitter, Facebook and Instagram are still struggling with.
+
+This is because the line between Hate Speech and regular offensive language is so fine. Hate speech is defined as abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation. Usually, the difference between hate speech and offensive language comes down to subtle context or diction.
 
 ![word_venn](./visualizations/word_venn.png)
 
+Here, we can see that there are 679 words unique to the "Hate Speech" label. Some of these words are nonsensical or meaningless, but some are especially hateful words. For example, this label contains phrases such as "sp-cs", "mo-kies", "ov-nj-w", "fa--ot" and much more. These are all ethnic or homophobic slurs. Most notably, we saw in earlier EDA that this label disproportionately contains the N-word with the hard "R". Language like this
+
+However, it's hard for a machine learning model to understand the nuances with this hateful slang. Although these words are unique to the "Hate Speech" label corpus, there's simply not enough data for that label. Therefore, an important next step would be to collect more data that has been identified as hate speech by CrowFlow voters.
+
+Additionally, we can recommend for now that Twitter manually moderate these words, just like it could with the top hashtags that were identified for each label in earlier EDA.
+
+Ultimately, automating hate speech detection is an extremely difficult task because of the nuances in English slang and slurs. This project was able to get that process started, but there is much more work to be done to keep this content off of public-facing forums such as Twitter.
 
 ## Next Steps
-- Improve final model with different preprocessing techniques
-- Evaluate model with new tweets or other online forum data
+
+To further develop this project, here are some immediate next steps that anyone could execute.
+
+- Collect more potentialHate Speech data to be labeled by CrowdFlow voting system
+- Improve final model with different preprocessing techniques, such as removing offensive language as stop words
+- Evaluate model with new tweets or other online forum data to see if it can generalize well
 - LDA Topic Modeling with Gensim
 - Deploy MVP on Webapp via StreamLit
 
