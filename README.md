@@ -83,7 +83,8 @@ Overall, we want as much hate speech to flagged as possible and so that it can b
 
 
 ## Next Steps
-- Evaluate model with new tweet or other online forum data
+- Improve final model with different preprocessing techniques
+- Evaluate model with new tweets or other online forum data
 - LDA Topic Modeling with Gensim
 - Deploy MVP on Webapp via StreamLit
 
@@ -106,9 +107,15 @@ Overall, we want as much hate speech to flagged as possible and so that it can b
 
 ## For More Information
 
-See the [full project overview](link) in the `final_notebook.ipynb` Jupyter Notebook.
+- See the [full project overview](https://github.com/sidneykung/twitter_hate_speech_detection/blob/master/final_notebook.ipynb) in the `final_notebook.ipynb` Jupyter Notebook.
 
-For additional info, contact Sidney Kung at sidneyjkung@gmail.com
+- For additional information or suggestions, contact Sidney Kung at [sidneyjkung@gmail.com](mailto:sidneyjkung@gmail.com)
+
+**Let's connect!**
+
+- [LinkedIn](https://www.linkedin.com/in/sidneykung/)
+
+- [Twitter](https://twitter.com/sidney_k98)
 
 ## References
 
