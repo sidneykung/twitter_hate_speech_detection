@@ -75,7 +75,7 @@ We use the evaluation metrics Precision, Recall and F1 score to determine succes
 
 Overall, we want as much hate speech to flagged as possible and so that it can be efficiently removed.
 
-![confusion](./visualizations/final_model_confusion_matrix.png)
+![confusion](./visualizations/linear_svm_confusion_matrix.png)
 
 
 ## Conclusion
