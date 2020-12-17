@@ -87,7 +87,7 @@ Overall, we want as much hate speech to flagged as possible and so that it can b
 
 As expected, the final model has a True Negative Rate of 95% and a True Positive Rate of only 44%.
 
-- This is consistent with the final model's evaluation metrics, where it got a Recall of .437, aka TNR
+- This is consistent with the final model's evaluation metrics, where it got a Recall of .437, aka TPR
 - In this business context, we would ideally want as many True Negatives as possible, because that would be identifying Hate Speech correctly
 - Therefore, this is where the final model fails
 
@@ -97,7 +97,7 @@ Also, we can see that only 4.6% of predictions are False Positives. Which mean t
 
 ## Conclusion
 
-This performance is indicative of the two major roadblocks of the project: 
+**The final mode's performance is indicative of the two major roadblocks of the project:**
 1. The massive class imbalance of the dataset 
 2. The model's ability to identify what constitutes as hate speech
 
@@ -125,7 +125,7 @@ Ultimately, automating hate speech detection is an extremely difficult task beca
 
 To further develop this project, here are some immediate next steps that anyone could execute.
 
-- Collect more potentialHate Speech data to be labeled by CrowdFlow voting system
+- Collect more potential "Hate Speech" data to be labeled by CrowdFlow voting system
 - Improve final model with different preprocessing techniques, such as removing offensive language as stop words
 - Evaluate model with new tweets or other online forum data to see if it can generalize well
 - LDA Topic Modeling with Gensim
