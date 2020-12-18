@@ -95,7 +95,7 @@ Also, we can see that only 4.6% of predictions are False Positives. Which mean t
 
 ## Conclusion
 
-**The final mode's performance is indicative of the two major roadblocks of the project:**
+**The final model's performance is indicative of the two major roadblocks of the project:**
 1. The massive class imbalance of the dataset 
 2. The model's ability to identify what constitutes as hate speech
 
