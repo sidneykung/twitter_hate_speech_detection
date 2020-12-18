@@ -25,9 +25,9 @@ The dataset for this capstone project was sourced from a study called *Automated
 
 | Column Name | Description |
 |-|-|
-| total_votes | number of CrowdFlower users who coded each tweet (minimum is 3, sometimes more users coded a tweet when judgments were determined to be unreliable by CF). |
-| hate_speech_votes | number of CF users who judged the tweet to be hate speech. |
-| other_votes | number of CF users who judged the tweet to be offensive language or neither. |
+| total_votes | number of CrowdFlower users who coded each tweet (minimum is 3, sometimes more users coded a tweet when judgments were determined to be unreliable by CF) |
+| hate_speech_votes | number of CF users who judged the tweet to be hate speech |
+| other_votes | number of CF users who judged the tweet to be offensive language or neither |
 | label | class label for majority of CF user votes. 1 - hate speech 0 - not hate speech |
 | tweet | raw tweets |
 | clean_tweet | tweets filtered through NLP data cleaning process |
@@ -95,7 +95,7 @@ As expected, the final model has a True Negative Rate of 95% and a True Positive
 
 **The final model's performance is indicative of the two major roadblocks of the project:**
 1. The massive class imbalance of the dataset 
-2. The model's ability to identify what constitutes as hate speech
+2. The model's inability to identify what constitutes as hate speech
 
 The issue of class imbalance is manageable with preprocessing techniques and oversampling/undersampling techniques. However, identifying hate speech is an overall problem that many major tech companies like Twitter, Facebook and Instagram are still struggling with.
 
