@@ -1,7 +1,7 @@
 # Twitter Hate Speech Detection
 ## *Can content moderation be automated?*
 
-**Please note:** Because of the subject matter of this project, all notebooks contain offensive language from the dataset.
+**Warning:** All notebooks contain offensive language from the dataset.
 
 ## Overview
 
