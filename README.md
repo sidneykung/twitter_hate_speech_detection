@@ -1,5 +1,5 @@
 # Twitter Hate Speech Detection
-## *Can content moderation be automated?*
+## *Can Content Moderation Be Automated?*
 
 ![banner](./visualizations/banner.png)
 
