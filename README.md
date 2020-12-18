@@ -1,13 +1,13 @@
 # Twitter Hate Speech Detection
 ## *Can content moderation be automated?*
 
-**Warning:** All notebooks contain offensive language from the dataset.
-
 ![banner](./visualizations/banner.png)
 
 ## Overview
 
 This project aims to **automate content moderation** to identify hate speech using **machine learning binary classification algorithms.** Baseline models included Random Forest, Naive Bayes, Logistic Regression and SVM models. The final model was a Linear SVM model with an F1 of 0.3955 and Recall (TPR) of 0.4373. This poor performance can be attributed to the massive class imbalance and the model's ability to "understand" the nuances of English slang and slurs. Ultimately, automating hate speech detection is an extremely difficult task. And although this project was able to get that process started, there is much more work to be done in order to keep this content off of public-facing forums such as Twitter.
+
+**Warning:** All notebooks contain offensive language from the dataset.
 
 ## Business Problem
 **Human content moderation exploits people by consistently traumatizing and underpaying them.** In 2019, an [article](https://www.theverge.com/2019/6/19/18681845/facebook-moderator-interviews-video-trauma-ptsd-cognizant-tampa) on The Verge exposed the extensive list of horrific working conditions that employees faced at Cognizant, which was Facebook’s primary moderation contractor. Unfortunately, **every major tech company**, including **Twitter**, uses human moderators to some extent, both domestically and overseas.
@@ -157,4 +157,10 @@ To further develop this project, here are some immediate next steps that anyone 
 
 ## References
 
-Davidson, T., Warmsley, D., Macy, M. and Weber, I., 2017. Automated Hate Speech Detection and the Problem of Offensive Language. ArXiv,.
+**Data Source**
+
+- Davidson, T., Warmsley, D., Macy, M. and Weber, I., 2017. Automated Hate Speech Detection and the Problem of Offensive Language. ArXiv,.
+
+**Banner & Presentation Template Source**
+
+- [SlidesGo](https://slidesgo.com/)
