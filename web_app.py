@@ -11,7 +11,7 @@
 
 """ 
 
-# importing python packages
+# importing relevant python packages
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -23,6 +23,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # creating page sections
 site_header = st.beta_container()
 business_context = st.beta_container()
+performance = st.beta_container()
 tweet_input = st.beta_container()
 model_results = st.beta_container()
 sentimet_analysis = st.beta_container()
@@ -51,6 +52,20 @@ with business_context:
     The data for this project was sourced from a Cornell University [study](https://github.com/t-davidson/hate-speech-and-offensive-language) titled *Automated Hate Speech Detection and the Problem of Offensive Language*.
 
     """)
+
+with performance:
+    description, conf_matrix = st.beta_columns(2)
+    with description:
+        st.header('Final Model Performance')
+        st.write("""
+        These scores are indicative of the two major roadblocks of the project:
+        - The massive class imbalance of the dataset
+        - The model's inability to identify what constitutes as hate speech
+
+        Add more here...
+        """)
+    with conf_matrix:
+        st.image(Image.open('visualizations/normalized_svm_matrix.png'), width = 400)
     st.markdown("---")
 
 with tweet_input:
@@ -65,9 +80,9 @@ with sentimet_analysis:
     st.header('Sentiment Analysis with VADER')
     
     # instantiating VADER sentiment analyzer
-    sid_obj = SentimentIntensityAnalyzer() 
+    analyzer = SentimentIntensityAnalyzer() 
     # the object outputs the scores into a dict
-    sentiment_dict = sid_obj.polarity_scores(user_text) 
+    sentiment_dict = analyzer.polarity_scores(user_text) 
 
     if sentiment_dict['compound'] >= 0.05 : 
         category = ("**Positive ✅**")
@@ -81,21 +96,21 @@ with sentimet_analysis:
     # spacer
     st.text('')
 
-# score breakdown section with columns
-col1, col2 = st.beta_columns(2)
-with col1:
-    # printing category
-    st.write("Your Tweet is Rated as", category) 
-    # printing overall compound score
-    st.write("**Compound Score**: ", sentiment_dict['compound'])
-    # printing overall compound score
-    st.write("**Sentiment Breakdown:**") 
-    st.write(sentiment_dict['neg']*100, "% Negative") 
-    st.write(sentiment_dict['neu']*100, "% Neutral") 
-    st.write(sentiment_dict['pos']*100, "% Positive") 
-with col2:
-    sentiment_graph = pd.DataFrame.from_dict(sentiment_dict, orient='index').drop(['compound'])
-    st.bar_chart(sentiment_graph) 
+    # score breakdown section with columns
+    breakdown, graph = st.beta_columns(2)
+    with breakdown:
+        # printing category
+        st.write("Your Tweet is rated as", category) 
+        # printing overall compound score
+        st.write("**Compound Score**: ", sentiment_dict['compound'])
+        # printing overall compound score
+        st.write("**Polarity Breakdown:**") 
+        st.write(sentiment_dict['neg']*100, "% Negative") 
+        st.write(sentiment_dict['neu']*100, "% Neutral") 
+        st.write(sentiment_dict['pos']*100, "% Positive") 
+    with graph:
+        sentiment_graph = pd.DataFrame.from_dict(sentiment_dict, orient='index').drop(['compound'])
+        st.bar_chart(sentiment_graph) 
 
 
 # with model_training:
