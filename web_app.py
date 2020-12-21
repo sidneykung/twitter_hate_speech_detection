@@ -23,6 +23,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # creating page sections
 site_header = st.beta_container()
 business_context = st.beta_container()
+data_desc = st.beta_container()
 performance = st.beta_container()
 tweet_input = st.beta_container()
 model_results = st.beta_container()
@@ -49,9 +50,21 @@ with business_context:
     
     Hate speech is defined as **abusive or threatening speech that expresses prejudice against a particular group, especially on the basis of race, religion or sexual orientation.**  Usually, the difference between hate speech and offensive language comes down to subtle context or diction.
     
-    The data for this project was sourced from a Cornell University [study](https://github.com/t-davidson/hate-speech-and-offensive-language) titled *Automated Hate Speech Detection and the Problem of Offensive Language*.
-
     """)
+
+with data_desc:
+    understanding, venn = st.beta_columns(2)
+    with understanding:
+        st.text('')
+        st.write("""
+        The data for this project was sourced from a Cornell University [study](https://github.com/t-davidson/hate-speech-and-offensive-language) titled *Automated Hate Speech Detection and the Problem of Offensive Language*.
+        
+        The `.csv` file has **24,802 rows** where **6% of the tweets were labeled as "Hate Speech".**
+
+        Each tweet's label was voted on by crowdsource and determined by majority rules.
+        """)
+    with venn:
+        st.image(Image.open('visualizations/word_venn.png'), width = 400)
 
 with performance:
     description, conf_matrix = st.beta_columns(2)
