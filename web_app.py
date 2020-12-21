@@ -38,7 +38,6 @@ performance = st.beta_container()
 tweet_input = st.beta_container()
 model_results = st.beta_container()
 sentiment_analysis = st.beta_container()
-# model_training = st.beta_container()
 
 with site_header:
     st.title('Twitter Hate Speech Detection')
@@ -159,8 +158,3 @@ with sentiment_analysis:
     with graph:
         sentiment_graph = pd.DataFrame.from_dict(sentiment_dict, orient='index').drop(['compound'])
         st.bar_chart(sentiment_graph) 
-
-
-# with model_training:
-#     st.header('Model training')
-#     st.text('In this section you can select the hyperparameters!')
