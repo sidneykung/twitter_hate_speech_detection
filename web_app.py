@@ -1,7 +1,7 @@
 """ 
 
 
-    PLEASE READ FIRST:
+    PLEASE READ:
 
     This is a web app created with Streamlit to host this project. 
 
@@ -17,7 +17,17 @@ import pandas as pd
 import numpy as np
 import pickle
 from PIL import Image
+# preprocessing
+import re
+import string
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer 
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+# modeling
 from sklearn import svm
+# sentiment analysis
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 # creating page sections
@@ -27,7 +37,7 @@ data_desc = st.beta_container()
 performance = st.beta_container()
 tweet_input = st.beta_container()
 model_results = st.beta_container()
-sentimet_analysis = st.beta_container()
+sentiment_analysis = st.beta_container()
 # model_training = st.beta_container()
 
 with site_header:
@@ -88,8 +98,33 @@ with tweet_input:
 with model_results:
     st.header('Results')
     st.write("""This section will output Linear SVM model prediction.""")
+    
+    # processing user_text
+    # removing punctuation
+    user_text = re.sub('[%s]' % re.escape(string.punctuation), '', user_text)
+    # tokenizing
+    stop_words = set(stopwords.words('english'))
+    tokens = nltk.word_tokenize(user_text)
+    # removing stop words
+    stopwords_removed = [token.lower() for token in tokens if token.lower() not in stop_words]
+    # taking root word
+    lemmatizer = WordNetLemmatizer() 
+    lemmatized_output = []
+    for word in stopwords_removed:
+        lemmatized_output.append(lemmatizer.lemmatize(word))
 
-with sentimet_analysis:
+    # vectorizing
+    tfidf = TfidfVectorizer()
+    vect = tfidf.transform(lemmatized_output).toarray()
+
+    # reading in model
+    svm_model = pickle.load(open('pickle/final_linear_SVM.pkl', 'rb'))
+    # apply model to make predictions
+    prediction = svm_model.predict(vect)
+    st.write(prediction)
+
+
+with sentiment_analysis:
     st.header('Sentiment Analysis with VADER')
     
     # instantiating VADER sentiment analyzer
