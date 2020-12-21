@@ -1,7 +1,7 @@
 """ 
 
 
-    PLEASE READ:
+    PLEASE NOTE:
 
     This is a web app created with Streamlit to host this project. 
 
