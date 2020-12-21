@@ -140,6 +140,8 @@ To further develop this project, here are some immediate next steps that anyone 
 ├── README.md                          # public-facing preview
 ├── final_notebook.ipynb               # final version of EDA, feature engineering and modeing process
 └── presentation.pdf                   # slide deck
+└── web_app.py                         # interactive dashboard to host project
+
 
 ```
 

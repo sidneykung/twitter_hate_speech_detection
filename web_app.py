@@ -1,12 +1,17 @@
 """ 
 
-This is a web app created with Streamlit to host this project. 
 
-If you use any of this code, please credit with a link to my website:
-https://www.sidneykung.com/
+    PLEASE READ FIRST:
+
+    This is a web app created with Streamlit to host this project. 
+
+    If you use any of this code, please credit with a link to my website:
+    https://www.sidneykung.com/
+
 
 """ 
 
+# importing python packages
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,6 +20,7 @@ from PIL import Image
 from sklearn import svm
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+# creating page sections
 site_header = st.beta_container()
 business_context = st.beta_container()
 tweet_input = st.beta_container()
