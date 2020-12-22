@@ -47,10 +47,10 @@ def unfiltered_tokens(text):
     return dirty_tokens
 
 def process_tweet(text):
-    """tokenizing with removing stop words"""
+    """tokenize text in each column and remove stop words"""
     tokens = nltk.word_tokenize(text)
     stopwords_removed = [token.lower() for token in tokens if token.lower() not in stop_words]
-    return stopwords_removed
+    return stopwords_removed 
 
 ## functions used for modeling
 
@@ -62,3 +62,10 @@ def evaluation(precision, recall, f1, f1_weighted):
     print('Recall: {:.4}'.format(recall))
     print('F1 Score: {:.4}'.format(f1))
     print('Weighted F1 Score: {:.4}'.format(f1_weighted))
+
+# Doc2Vec
+def vec_for_learning(model, tagged_docs):    
+    """final vector feature for classifier use"""
+    sents = tagged_docs.values
+    targets, regressors = zip(*[(doc.tags[0], model.infer_vector(doc.words, steps=20)) for doc in sents])
+    return targets, regressors
