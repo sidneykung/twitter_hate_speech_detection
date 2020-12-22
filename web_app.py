@@ -38,6 +38,7 @@ performance = st.beta_container()
 tweet_input = st.beta_container()
 model_results = st.beta_container()
 sentiment_analysis = st.beta_container()
+contact = st.beta_container()
 
 with site_header:
     st.title('Twitter Hate Speech Detection')
@@ -84,7 +85,6 @@ with performance:
         - The massive class imbalance of the dataset
         - The model's inability to identify what constitutes as hate speech
 
-        Add more here...
         """)
     with conf_matrix:
         st.image(Image.open('visualizations/normalized_svm_matrix.png'), width = 400)
@@ -92,69 +92,85 @@ with performance:
 
 with tweet_input:
     st.header('Is Your Tweet Considered Hate Speech?')
+    st.write("""*Please note that this is based on how the model was trained, so this may not be an accurate representation.*""")
+    # user input here
     user_text = st.text_input('Enter Tweet', max_chars=280) # setting input as user_text
 
-with model_results:
-    st.header('Results')
-    st.write("""This section will output Linear SVM model prediction.""")
-    
+with model_results:    
+    st.subheader('Prediction:')
+    if user_text:
     # processing user_text
-    # removing punctuation
-    user_text = re.sub('[%s]' % re.escape(string.punctuation), '', user_text)
-    # tokenizing
-    stop_words = set(stopwords.words('english'))
-    tokens = nltk.word_tokenize(user_text)
-    # removing stop words
-    stopwords_removed = [token.lower() for token in tokens if token.lower() not in stop_words]
-    # taking root word
-    lemmatizer = WordNetLemmatizer() 
-    lemmatized_output = []
-    for word in stopwords_removed:
-        lemmatized_output.append(lemmatizer.lemmatize(word))
 
-    # vectorizing
-    tfidf = TfidfVectorizer()
-    vect = tfidf.transform(lemmatized_output).toarray()
+        # removing punctuation
+        user_text = re.sub('[%s]' % re.escape(string.punctuation), '', user_text)
+        # tokenizing
+        stop_words = set(stopwords.words('english'))
+        tokens = nltk.word_tokenize(user_text)
+        # removing stop words
+        stopwords_removed = [token.lower() for token in tokens if token.lower() not in stop_words]
+        # taking root word
+        lemmatizer = WordNetLemmatizer() 
+        lemmatized_output = []
+        for word in stopwords_removed:
+            lemmatized_output.append(lemmatizer.lemmatize(word))
 
-    # reading in model
-    svm_model = pickle.load(open('pickle/final_linear_SVM.pkl', 'rb'))
-    # apply model to make predictions
-    prediction = svm_model.predict(vect)
-    st.write(prediction)
+        # vectorizing
+        tfidf = TfidfVectorizer(stop_words= stop_words, ngram_range=(1,2))
+        X_train = pickle.load(open('pickle/X_train.pkl', 'rb'))
+        X_test = lemmatized_output
+        train_tfidf = tfidf.fit_transform(X_train)
+        test_tfidf = tfidf.transform(X_test)
 
+        # loading in model
+        svm_model = pickle.load(open('pickle/final_linear_SVM.pkl', 'rb'))
+        # apply model to make predictions
+        prediction = svm_model.predict(test_tfidf[0])
+        
+        from st_annotated_text import annotated_text
+        annotated_text(("Hate Speech", "#afa"),("Not Hate Speech", "#faa"))
+
+        if prediction == 0:
+            st.write('Not Hate Speech')
+        else:
+            st.write('Hate Speech')
+        st.text('')
 
 with sentiment_analysis:
-    st.header('Sentiment Analysis with VADER')
+    if user_text:
+        st.header('Sentiment Analysis with VADER')
+        
+        # explaining VADER
+        st.write("""*VADER is a lexicon designed for scoring social media. More information can be found [here](https://github.com/cjhutto/vaderSentiment).*""")
+        # spacer
+        st.text('')
     
-    # instantiating VADER sentiment analyzer
-    analyzer = SentimentIntensityAnalyzer() 
-    # the object outputs the scores into a dict
-    sentiment_dict = analyzer.polarity_scores(user_text) 
+        # instantiating VADER sentiment analyzer
+        analyzer = SentimentIntensityAnalyzer() 
+        # the object outputs the scores into a dict
+        sentiment_dict = analyzer.polarity_scores(user_text) 
+        if sentiment_dict['compound'] >= 0.05 : 
+            category = ("**Positive ✅**")
+        elif sentiment_dict['compound'] <= - 0.05 : 
+            category = ("**Negative 🚫**") 
+        else : 
+            category = ("**Neutral ☑️**")
 
-    if sentiment_dict['compound'] >= 0.05 : 
-        category = ("**Positive ✅**")
-    elif sentiment_dict['compound'] <= - 0.05 : 
-        category = ("**Negative 🚫**") 
-    else : 
-        category = ("**Neutral ☑️**")
+        # score breakdown section with columns
+        breakdown, graph = st.beta_columns(2)
+        with breakdown:
+            # printing category
+            st.write("Your Tweet is rated as", category) 
+            # printing overall compound score
+            st.write("**Compound Score**: ", sentiment_dict['compound'])
+            # printing overall compound score
+            st.write("**Polarity Breakdown:**") 
+            st.write(sentiment_dict['neg']*100, "% Negative") 
+            st.write(sentiment_dict['neu']*100, "% Neutral") 
+            st.write(sentiment_dict['pos']*100, "% Positive") 
+        with graph:
+            sentiment_graph = pd.DataFrame.from_dict(sentiment_dict, orient='index').drop(['compound'])
+            st.bar_chart(sentiment_graph) 
 
-    # explaining VADER
-    st.write("""*VADER is a lexicon designed for scoring social media. More information can be found [here](https://github.com/cjhutto/vaderSentiment).*""")
-    # spacer
-    st.text('')
-
-    # score breakdown section with columns
-    breakdown, graph = st.beta_columns(2)
-    with breakdown:
-        # printing category
-        st.write("Your Tweet is rated as", category) 
-        # printing overall compound score
-        st.write("**Compound Score**: ", sentiment_dict['compound'])
-        # printing overall compound score
-        st.write("**Polarity Breakdown:**") 
-        st.write(sentiment_dict['neg']*100, "% Negative") 
-        st.write(sentiment_dict['neu']*100, "% Neutral") 
-        st.write(sentiment_dict['pos']*100, "% Positive") 
-    with graph:
-        sentiment_graph = pd.DataFrame.from_dict(sentiment_dict, orient='index').drop(['compound'])
-        st.bar_chart(sentiment_graph) 
+with contact:
+    st.markdown("---")
+    st.header('For More Information')
