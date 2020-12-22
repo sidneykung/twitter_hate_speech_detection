@@ -53,7 +53,7 @@ with site_header:
     """)
 
 with business_context:
-    st.header('Business Context')
+    st.header('The Problem of Content Moderation')
     st.write("""
     
     **Human content moderation exploits people by consistently traumatizing and underpaying them.** In 2019, an [article](https://www.theverge.com/2019/6/19/18681845/facebook-moderator-interviews-video-trauma-ptsd-cognizant-tampa) on The Verge exposed the extensive list of horrific working conditions that employees faced at Cognizant, which was Facebook’s primary moderation contractor. Unfortunately, **every major tech company**, including **Twitter**, uses human moderators to some extent, both domestically and overseas.
@@ -67,7 +67,7 @@ with data_desc:
     with understanding:
         st.text('')
         st.write("""
-        The data for this project was sourced from a Cornell University [study](https://github.com/t-davidson/hate-speech-and-offensive-language) titled *Automated Hate Speech Detection and the Problem of Offensive Language*.
+        The **data** for this project was sourced from a Cornell University [study](https://github.com/t-davidson/hate-speech-and-offensive-language) titled *Automated Hate Speech Detection and the Problem of Offensive Language*.
         
         The `.csv` file has **24,802 rows** where **6% of the tweets were labeled as "Hate Speech".**
 
@@ -84,15 +84,13 @@ with performance:
         These scores are indicative of the two major roadblocks of the project:
         - The massive class imbalance of the dataset
         - The model's inability to identify what constitutes as hate speech
-
         """)
     with conf_matrix:
         st.image(Image.open('visualizations/normalized_svm_matrix.png'), width = 400)
-    st.markdown("---")
 
 with tweet_input:
     st.header('Is Your Tweet Considered Hate Speech?')
-    st.write("""*Please note that this is based on how the model was trained, so this may not be an accurate representation.*""")
+    st.write("""*Please note that this prediction is based on how the model was trained, so it may not be an accurate representation.*""")
     # user input here
     user_text = st.text_input('Enter Tweet', max_chars=280) # setting input as user_text
 
@@ -100,7 +98,6 @@ with model_results:
     st.subheader('Prediction:')
     if user_text:
     # processing user_text
-
         # removing punctuation
         user_text = re.sub('[%s]' % re.escape(string.punctuation), '', user_text)
         # tokenizing
@@ -121,18 +118,16 @@ with model_results:
         train_tfidf = tfidf.fit_transform(X_train)
         test_tfidf = tfidf.transform(X_test)
 
+
         # loading in model
         svm_model = pickle.load(open('pickle/final_linear_SVM.pkl', 'rb'))
         # apply model to make predictions
         prediction = svm_model.predict(test_tfidf[0])
-        
-        from st_annotated_text import annotated_text
-        annotated_text(("Hate Speech", "#afa"),("Not Hate Speech", "#faa"))
 
         if prediction == 0:
-            st.write('Not Hate Speech')
+            st.subheader('**Not Hate Speech**')
         else:
-            st.write('Hate Speech')
+            st.subheader('**Hate Speech**')
         st.text('')
 
 with sentiment_analysis:
@@ -174,3 +169,18 @@ with sentiment_analysis:
 with contact:
     st.markdown("---")
     st.header('For More Information')
+    st.text('')
+    st.write("""
+
+    **Check out the project repository [here](https://github.com/sidneykung/twitter_hate_speech_detection).**
+
+    Contact Sidney Kung via [sidneyjkung@gmail.com](mailto:sidneyjkung@gmail.com).
+    """)
+
+    st.subheader("Let's Connect!")
+    st.write("""
+    
+    [LinkedIn](https://www.linkedin.com/in/sidneykung/) | [Github](https://github.com/sidneykung)  |  [Medium](https://medium.com/@sidneykung)  |  [Twitter](https://twitter.com/sidney_k98)
+
+
+    """)
