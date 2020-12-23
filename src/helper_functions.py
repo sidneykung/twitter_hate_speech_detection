@@ -18,6 +18,7 @@ from nltk.stem import PorterStemmer
 # modeling libraries
 from sklearn import metrics
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, plot_confusion_matrix, roc_curve, auc, classification_report
+from sklearn.model_selection import cross_val_score
 
 ## functions used in data_cleaning.ipynb
 
@@ -63,7 +64,17 @@ def evaluation(precision, recall, f1, f1_weighted):
     print('Recall: {:.4}'.format(recall))
     print('F1 Score: {:.4}'.format(f1))
     print('Weighted F1 Score: {:.4}'.format(f1_weighted))
-    
+
+# function to print cross valudation
+def cross_validation(model, X_train, y_train, metric, x):
+    """prints cross-validation metrics for a model"""
+    scores = cross_val_score(model, X_train, y_train, scoring=metric, cv=x)
+    print('Cross-Validation F1 Scores:', scores)    
+    print('\nMin: ', round(scores.min(), 6))
+    print('Max: ', round(scores.max(), 6))
+    print('Mean: ', round(scores.mean(), 6)) 
+    print('Range: ', round(scores.max() - scores.min(), 6))
+
 # Doc2Vec
 def vec_for_learning(model, tagged_docs):    
     """final vector feature for classifier use"""
