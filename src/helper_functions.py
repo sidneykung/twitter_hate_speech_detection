@@ -48,6 +48,7 @@ def unfiltered_tokens(text):
 
 def process_tweet(text):
     """tokenize text in each column and remove stop words"""
+    stop_words = set(stopwords.words('english'))
     tokens = nltk.word_tokenize(text)
     stopwords_removed = [token.lower() for token in tokens if token.lower() not in stop_words]
     return stopwords_removed 
@@ -62,7 +63,7 @@ def evaluation(precision, recall, f1, f1_weighted):
     print('Recall: {:.4}'.format(recall))
     print('F1 Score: {:.4}'.format(f1))
     print('Weighted F1 Score: {:.4}'.format(f1_weighted))
-
+    
 # Doc2Vec
 def vec_for_learning(model, tagged_docs):    
     """final vector feature for classifier use"""
