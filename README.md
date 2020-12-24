@@ -120,11 +120,10 @@ Ultimately, automating hate speech detection is an extremely difficult task beca
 
 To further develop this project, here are some immediate next steps that anyone could execute.
 
-- Collect more potential "Hate Speech" data to be labeled by CrowdFlow voting system
+- Collect more potential "Hate Speech" data to be labeled by CrowdFlowe voting system
 - Improve final model with different preprocessing techniques, such as removing offensive language as stop words
 - Evaluate model with new tweets or other online forum data to see if it can generalize well
 - LDA Topic Modeling with Gensim
-- Deploy MVP on Webapp via StreamLit
 
 ## Repository Contents
 ```bash
