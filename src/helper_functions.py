@@ -56,24 +56,32 @@ def process_tweet(text):
 
 ## functions used for modeling
 
-# function to print evaluation metrics
-def evaluation(precision, recall, f1, f1_weighted):
+# function to print all evaluation metrics
+def evaluation(precision, recall, f1_score, f1_weighted):
     """prints out evaluation metrics for a model"""
-    print('Testing Evaluation Metrics:')
+    print('Testing Set Evaluation Metrics:')
     print('Precision: {:.4}'.format(precision))
     print('Recall: {:.4}'.format(recall))
-    print('F1 Score: {:.4}'.format(f1))
+    print('F1 Score: {:.4}'.format(f1_score))
     print('Weighted F1 Score: {:.4}'.format(f1_weighted))
 
-# function to print cross valudation
-def cross_validation(model, X_train, y_train, metric, x):
-    """prints cross-validation metrics for a model"""
+# function to print training cross validation f1 stats
+def train_cross_validation(model, X_train, y_train, metric, x):
+    """prints cross-validation TRAINING metrics for a model"""
     scores = cross_val_score(model, X_train, y_train, scoring=metric, cv=x)
     print('Cross-Validation F1 Scores:', scores)    
     print('\nMin: ', round(scores.min(), 6))
     print('Max: ', round(scores.max(), 6))
     print('Mean: ', round(scores.mean(), 6)) 
     print('Range: ', round(scores.max() - scores.min(), 6))
+
+# determing out whether the model overfit or underfit
+def fit(cv_f1, f1_score):
+    if cv_f1 > f1_score:
+        fit = 'overfit'
+    else:
+        fit = 'underfit'
+    return fit
 
 # Doc2Vec
 def vec_for_learning(model, tagged_docs):    
