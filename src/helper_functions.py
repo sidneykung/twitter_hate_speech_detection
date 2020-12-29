@@ -1,4 +1,4 @@
-# importing necessary functions
+# importing relevant libraries
 import numpy as np
 import pandas as pd
 import pickle
