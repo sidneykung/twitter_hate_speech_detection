@@ -85,7 +85,7 @@ Additionally from this graph, we can see that tweets classified as Hate Speech a
 
 F1 score was used as the main metric for this project, while also looking at Precision and Recall. Overall, we want as much hate speech to flagged as possible and so that it can be efficiently removed.
 
-![confusion](./visualizations/normalized_svm_matrix.png)
+![confusion](./visualizations/normalized_log_reg_countvec_matrix.png)
 
 As expected, the final model has a True Negative Rate of 95% and a True Positive Rate (Recall) of only 44%.
 
