@@ -1,9 +1,5 @@
 # Twitter Hate Speech Detection
 
-```diff
-This is an ongoing project to be completed on January 6, 2021.
-```
-
 ## *Can Content Moderation Be Automated?*
 
 ![banner](./visualizations/banner.png)
