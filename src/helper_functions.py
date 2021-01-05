@@ -73,7 +73,7 @@ def process_tweet(text):
     return stopwords_removed 
 
 
-## functions used for modeling
+## functions used for modeling process
 
 # function to print all evaluation metrics
 def evaluation(precision, recall, f1_score, f1_weighted):
