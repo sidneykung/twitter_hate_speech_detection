@@ -23,8 +23,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
 # modeling
 from sklearn import svm
 # sentiment analysis
@@ -47,7 +46,7 @@ with site_header:
     
     This project aims to **automate content moderation** to identify hate speech using **machine learning binary classification algorithms.** 
     
-    Baseline models included Random Forest, Naive Bayes, Logistic Regression and Support Vector Machine (SVM). **The final model was a Linear SVM model** with an F1 of 0.3955 and Recall (TPR) of 0.4373. 
+    Baseline models included Random Forest, Naive Bayes, Logistic Regression and Support Vector Machine (SVM). The final model was a **Logistic Regression** model that used Count Vectorization for feature engineering. It produced an F1 of 0.3958 and Recall (TPR) of 0.624.  
         
     Check out the project repository [here](https://github.com/sidneykung/twitter_hate_speech_detection).
     """)
@@ -86,7 +85,7 @@ with performance:
         - The model's inability to identify what constitutes as hate speech
         """)
     with conf_matrix:
-        st.image(Image.open('visualizations/normalized_svm_matrix.png'), width = 400)
+        st.image(Image.open('visualizations/normalized_log_reg_countvec_matrix.png'), width = 400)
 
 with tweet_input:
     st.header('Is Your Tweet Considered Hate Speech?')
@@ -111,18 +110,18 @@ with model_results:
         for word in stopwords_removed:
             lemmatized_output.append(lemmatizer.lemmatize(word))
 
-        # vectorizing
-        tfidf = TfidfVectorizer(stop_words= stop_words, ngram_range=(1,2))
-        X_train = pickle.load(open('pickle/X_train.pkl', 'rb'))
+        # instantiating count vectorizor
+        count = CountVectorizer(stop_words=stop_words)
+        X_train = pickle.load(open('pickle/X_train_2.pkl', 'rb'))
         X_test = lemmatized_output
-        train_tfidf = tfidf.fit_transform(X_train)
-        test_tfidf = tfidf.transform(X_test)
-
+        X_train_count = count.fit_transform(X_train)
+        X_test_count = count.transform(X_test)
 
         # loading in model
-        svm_model = pickle.load(open('pickle/final_linear_SVM.pkl', 'rb'))
+        final_model = pickle.load(open('pickle/final_log_reg_count_model.pkl', 'rb'))
+
         # apply model to make predictions
-        prediction = svm_model.predict(test_tfidf[0])
+        prediction = final_model.predict(X_test_count[0])
 
         if prediction == 0:
             st.subheader('**Not Hate Speech**')
