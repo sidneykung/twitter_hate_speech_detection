@@ -83,20 +83,21 @@ Additionally from this graph, we can see that tweets classified as Hate Speech a
 
 ## Final Model Performance
 
-F1 score was used as the main metric for this project, while also looking at Precision and Recall. Overall, we want as much hate speech to flagged as possible and so that it can be efficiently removed.
+F1 score was used as the main metric for this project, while also looking at Precision and Recall. 
+
+**Overall, we want as much hate speech to flagged as possible** and so that it can be efficiently removed. This means also **optomizing the True Positive Rate**, aka Recall.
 
 ![confusion](./visualizations/normalized_log_reg_countvec_matrix.png)
 
-As expected, the final model has a True Negative Rate of 95% and a True Positive Rate (Recall) of only 44%.
+As expected, the final model has a True Negative Rate of 91% and a True Positive Rate of 62%.
 
 - This is consistent with the final model's evaluation metrics
 - We ideally **want as many True Negatives as possible**, because that would be identifying Hate Speech correctly
-    - This is where the model fails
+    - This is where the model could be improved
 - However, it has a very low False Positive Rate, which means regular tweets won't be misclassified as Hate Speech often
     - With this, users won't complain about over-censorship
-    - This is where the model succeeds
 
-**Overall, the Recall of this model needs to be greatly improved, in addition to the F1 of .0.3955.**
+**Overall, the Recall of this model needs to be improved further, in addition to the F1 of .0.3958.**
 
 ## Conclusion
 
@@ -125,7 +126,7 @@ Ultimately, automating hate speech detection is an extremely difficult task beca
 
 To further develop this project, here are some immediate next steps that anyone could execute.
 
-- Collect more potential "Hate Speech" data to be labeled by CrowdFlowe voting system
+- Collect more potential "Hate Speech" data to be labeled by CrowdFlower voting system
 - Improve final model with different preprocessing techniques, such as removing offensive language as stop words
 - Evaluate model with new tweets or other online forum data to see if it can generalize well
 - LDA Topic Modeling with Gensim
