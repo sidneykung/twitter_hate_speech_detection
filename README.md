@@ -43,7 +43,7 @@ The dataset for this capstone project was sourced from a study called *Automated
 
 Linguistically, it's important to note that the difference between hate speech and offensive language often comes down to how it targets marginalized communities, often in threatening ways.
 
-- Although the labels have very similar frequently occurring words, 20% of the "Hate Speech" label is unique overall
+- Although the labels have very similar frequently occurring words, only 20% of the "Hate Speech" label is unique overall
 - For instance, Hate Speech typically contains the N-word with the hard 'R' 
 - **The use of this slur could indicate malicious intent, which goes beyond possibly using the word as cultural slang**
 
@@ -57,9 +57,9 @@ We can see some more parallels and differences between what is classified as hat
 
 - #tcot stands for "Top Conservatives On Twitter” and it appears in both groups
 - #teabagger, which refers to those who identify with the Tea Party, that is primarily (but not exclusively) associated with the Republican Party, appears in only the “Not Hate Speech” cloud
+- Both hashtags are used among Alt-Right communities
 - #r**skins, the former Washington NFL team name, appears in only the Not Hate Speech cloud
     - This hashtag demonstrates how similar "offensive language" could be to "Hate Speech"
-- Both hashtags are used among Alt-Right communities
 
 From this, it's recommended that **Twitter should closely monitor those top hashtags for potential posts containing hate speech** or even regular offensive language.
 
@@ -79,7 +79,7 @@ Additionally from this graph, we can see that tweets classified as Hate Speech a
 
 ## Final Model Performance
 
-F1 score was used as the main metric for this project, while also looking at Precision and Recall. 
+**F1 score was used as the main metric** for this project, while also looking at Precision and Recall. 
 
 **Overall, we want as much hate speech to flagged as possible** and so that it can be efficiently removed. This means also **optomizing the True Positive Rate**, aka Recall.
 
