@@ -56,9 +56,9 @@ Examples like that one demonstrate the nuances of English slang and the fine lin
 We can see some more parallels and differences between what is classified as hate speech or not. 
 
 - #tcot stands for "Top Conservatives On Twitter” and it appears in both groups
-- #teabagger, which refers to those who identify with the Tea Party, that is primarily (but not exclusively) associated with the Republican Party, appears in only the “Not Hate Speech” cloud
+- #teabagger, which refers to those who identify with the Tea Party, that is primarily (but not exclusively) associated with the Republican Party, only appears in the “Not Hate Speech” cloud
 - Both hashtags are used among Alt-Right communities
-- #r**skins, the former Washington NFL team name, appears in only the Not Hate Speech cloud
+- #r**skins, the former Washington NFL team name, only appears in the Not Hate Speech cloud
     - This hashtag demonstrates how similar "offensive language" could be to "Hate Speech"
 
 From this, it's recommended that **Twitter should closely monitor those top hashtags for potential posts containing hate speech** or even regular offensive language.
