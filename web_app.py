@@ -3,7 +3,10 @@
 
     PLEASE NOTE:
 
-    This is a web app created with Streamlit to host this project. 
+    This is an interactive web app created with StreamLit.
+
+    It's hosted on Heroku here:
+    https://hate-speech-predictor.herokuapp.com/
 
     If you use any of this code, please credit with a link to my website:
     https://www.sidneykung.com/
