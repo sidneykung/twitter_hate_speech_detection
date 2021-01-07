@@ -118,7 +118,7 @@ However, it's hard for a machine learning model to understand the nuances with t
 
 Ultimately, automating hate speech detection is an extremely difficult task because of the nuances in English slang and slurs. This project was able to get that process started, but there is much more work to be done to keep this content off of public-facing forums such as Twitter.
 
-## Model Deployment
+## Final Model Deployment
 
 An **interactive version** of the final model is hosted on Heroku. Check it out [here](https://hate-speech-predictor.herokuapp.com/)!
 
