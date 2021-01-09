@@ -99,7 +99,7 @@ As expected, the final model has a True Negative Rate of 91% and a True Positive
 
 **The final model's performance is indicative of the two major roadblocks of the project:**
 1. The massive class imbalance of the dataset 
-2. The model's inability to identify what constitutes as hate speech
+2. The model's inability to "understand" the nuances of hate speech
 
 The issue of class imbalance is manageable with preprocessing techniques and oversampling/undersampling techniques. However, identifying hate speech is an overall problem that many major tech companies like Twitter, Facebook and Instagram are still struggling with.
 
