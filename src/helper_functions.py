@@ -60,7 +60,7 @@ def clean_text_round1(text):
 ## functions used in nlp_preprocessing.ipynb
 
 def unfiltered_tokens(text):
-    """tokenizing withing removing stop words"""
+    """tokenizing without removing stop words"""
     dirty_tokens = nltk.word_tokenize(text)
     return dirty_tokens
 
