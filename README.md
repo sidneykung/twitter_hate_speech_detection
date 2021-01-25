@@ -147,7 +147,7 @@ To further develop this project, here are some immediate next steps that anyone 
 │   └── twitter_data.csv               # raw dataset
 ├── visualizations                     # contains visualizations and local images
 ├── README.md                          # public-facing preview
-├── final_notebook.ipynb               # final version of EDA, feature engineering and modeing process
+├── final_notebook.ipynb               # final version of EDA, feature engineering and modeling process
 ├── presentation.pdf                   # slide deck
 └── web_app.py                         # interactive dashboard to host project
 
