@@ -139,7 +139,7 @@ To further develop this project, here are some immediate next steps that anyone 
 ├── models                             # contains model iterations
 ├── pickle                             # contains cleaned data
 │   └── final_linear_SVM.pkl           # pickled final model
-├── preprocessing                      # contains all data preperation iterations and EDA notebooks
+├── preprocessing                      # contains all data preparation iterations and EDA notebooks
 │   ├── data_cleaning.ipynb            # raw data cleaning notebook
 │   ├── eda_notebook.ipynb             # exploratory data analysis notebook
 │   └── nlp_preprocessing.ipynb        # feature engineering notebook
