@@ -162,9 +162,7 @@ To further develop this project, here are some immediate next steps that anyone 
 
 **Let's connect!**
 
-- [LinkedIn](https://www.linkedin.com/in/sidneykung/)
-
-- [Twitter](https://twitter.com/sidney_k98)
+<a href="https://www.linkedin.com/in/sidneykung/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> <a href="https://twitter.com/sidney_k98" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>
 
 ## References
 
