@@ -150,8 +150,6 @@ To further develop this project, here are some immediate next steps that anyone 
 ├── final_notebook.ipynb               # final version of EDA, feature engineering and modeling process
 ├── presentation.pdf                   # slide deck
 └── web_app.py                         # interactive dashboard to host project
-
-
 ```
 
 ## For More Information
