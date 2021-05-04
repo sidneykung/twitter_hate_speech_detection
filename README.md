@@ -170,6 +170,10 @@ To further develop this project, here are some immediate next steps that anyone 
 
 - Davidson, T., Warmsley, D., Macy, M. and Weber, I., 2017. Automated Hate Speech Detection and the Problem of Offensive Language. ArXiv,.
 
+**Packages**
+
+- Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+
 **Banner & Presentation Template Source**
 
 - [SlidesGo](https://slidesgo.com/)
