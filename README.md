@@ -93,7 +93,7 @@ As expected, the final model has a True Negative Rate of 91% and a True Positive
 - However, it has a very low False Positive Rate, which means regular tweets won't be misclassified as Hate Speech often
     - With this, users won't complain about over-censorship
 
-**Overall, the Recall of this model needs to be improved further, in addition to the F1 of .0.3958.**
+**Overall, the Recall of this model needs to be improved further, in addition to the F1 of 0.3958.**
 
 ## Conclusion
 
